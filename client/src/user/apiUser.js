@@ -1,7 +1,7 @@
-import { API } from '../config';
+//import { API } from '../config';
 
 export const read = (userId, token) => {
-  return fetch(`${API}/user/${userId}`, {
+  return fetch(`https://e-commerce-digital-mern.herokuapp.com/user/${userId}`, {
     method: 'GET',
     headers: {
       Accept: 'application/json',
