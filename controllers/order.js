@@ -72,7 +72,7 @@ exports.create = (req, res) => {
     // email to buyer
     const emailData2 = {
       to: order.user.email,
-      from: 'noreply@ecommerce.com',
+      from: 'srdjan.kljajevic@gmail.com',
       subject: `You order is in process`,
       html: `
           <h1>Hey ${req.profile.name}, Thank you for shopping with us.</h1>
