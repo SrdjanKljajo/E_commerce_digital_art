@@ -36,7 +36,7 @@ exports.create = (req, res) => {
     // order.amount
     const emailData = {
       to: 'websmartist@gmail.com', // admin
-      from: 'noreply@ecommerce.com',
+      from: 'srdjan.kljajevic@gmail.com',
       subject: `A new order is received`,
       html: `
           <h1>Hey Admin, Somebody just made a purchase in your ecommerce store</h1>
