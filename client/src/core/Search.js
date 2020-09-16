@@ -65,11 +65,10 @@ const Search = () => {
     return (
       <div>
         <h2 className='mt-4 mb-4'>{searchMessage(searched, results)}</h2>
-
         <div className='row'>
           {results.map((product, i) => (
-            <div className='col-4 mb-3'>
-              <Card key={i} product={product} />
+            <div key={i} className='col-lg-4 col-md-6 mb-3'>
+              <Card product={product} />
             </div>
           ))}
         </div>
@@ -84,7 +83,7 @@ const Search = () => {
           <div className='input-group-prepend box'>
             <select className='btn mr-2' onChange={handleChange('category')}>
               <option value='All' className='bg-dark text-white'>
-                All
+                Categories
               </option>
               {categories.map((c, i) => (
                 <option key={i} className='bg-dark text-white' value={c._id}>
@@ -93,18 +92,30 @@ const Search = () => {
               ))}
             </select>
           </div>
-
           <input
             type='search'
-            className='form-control'
+            className='form-control d-none d-sm-block'
             onChange={handleChange('search')}
-            placeholder='Search by name'
+            placeholder='Search'
           />
         </div>
         <div className='btn input-group-append' style={{ border: 'none' }}>
           <button className='input-group-text'>Search</button>
         </div>
       </span>
+      <div className='d-flex justify-content-center h-100 mt-3 d-block d-sm-none'>
+        <div className='searchbar'>
+          <input
+            type='search'
+            className='search_input text-dark'
+            onChange={handleChange('search')}
+            placeholder='Search'
+          />
+          <span className='search_icon text-dark'>
+            <i className='fas fa-search'></i>
+          </span>
+        </div>
+      </div>
     </form>
   );
 

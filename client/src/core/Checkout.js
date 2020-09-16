@@ -1,12 +1,10 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import {
-  getProducts,
   getBraintreeClientToken,
   processPayment,
   createOrder,
 } from './apiCore';
 import { emptyCart } from './cartHelpers';
-import Card from './Card';
 import { isAuthenticated } from '../auth';
 import { Link } from 'react-router-dom';
 import DropIn from 'braintree-web-drop-in-react';
@@ -56,7 +54,7 @@ const Checkout = ({ products, setRun = f => f, run = undefined }) => {
       <div>{showDropIn()}</div>
     ) : (
       <Link to='/signin'>
-        <button className='btn btn-primary'>Sign in to checkout</button>
+        <button className='btn btn-outline-danger'>Sign in to checkout</button>
       </Link>
     );
   };
